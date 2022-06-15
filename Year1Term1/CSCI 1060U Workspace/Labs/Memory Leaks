@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int* pointer = new int[5]
+    for(int i = 0; i < 5; i++){
+        pointer[i] = i;
+        cout << pointers[i] << endl;
+    }
+//    while(true){
+//        int* leak = new int(3)
+//    }
+//crashes computer supposedly
+    delete[] pointer;
+
+    return 0;
+}

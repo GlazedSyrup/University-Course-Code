@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Mat3{
+    public:
+        Mat3();
+        Mat3(float topLeft, float topMiddle, float topRight);
+        ~Mat3();
+        string toString();
+        friend Mat3 operator+(Mat3 left, Mat3 right);
+        float at(int i, int ii);
+        float set(int i, int ii, float entry);
+    private:
+        float data[3][3];
+};
+
+Mat3::Mat3(){
+    for(int i =0; i < 3; i++){
+        for(int ii = 0; ii < 3; ii++){
+            if(i == ii){
+                data[i][ii] = 1.0;
+            }
+            else{
+
+            }
+        }
+    }
+}
+
+
+Mat3::Mat3(float topLeft, float topMiddle, float topRight){
+    for(int i =0; i < 3; i++){
+        for(int ii = 0; ii < 3; ii++){
+            data[0][i] = topLeft;
+            data[1][i] = topMiddle;
+            data[2][i] = topRight;
+        }
+    }
+}
+
+Mat3::~Mat3(){
+    cout << "Destroyed the matrix." << endl;
+}
+
+string Mat3::toString(){
+    string result;
+    for(int i = 0; i < 3; i++){
+        for(int ii = 0; ii < 3; ii++){
+            result.append(to_string(data[i][ii]));
+            result.append(" ");
+        }
+        result.append("\n");
+    }
+    return result;
+}
+
+
+float Mat3::at(int i int ii){
+    return data[i][ii];
+}
+
+void Mat3::set(int i int ii){
+     data[i][ii] = ;
+}
+
+Mat3 operator+(Mat3 left, Mat3 right){
+    Mat3 result = left;
+    for(int i = 0; i < 3; i++){
+        for(int ii = 0; ii < 3; ii++){
+            result.at(i, ii) = result.at(i, ii) + right.at(i, ii);
+        }
+    }
+    return
+}
+
+
+
+int main(){
+    Mat3 example;
+    Mat3 secondMatrix(3.0, 4.0, 5.0);
+    Mat3 additionMatrix = example + secondMatrix;
+    cout << example.toString() << endl;
+    cout << additionalMatrix.toString() << endl;
+    return 0;
+}

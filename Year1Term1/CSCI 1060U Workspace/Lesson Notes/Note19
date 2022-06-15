@@ -1,0 +1,14 @@
+//ArrayPtr *p1 = ArrayPtr[5];
+//we end with an array of 5 int pointers
+
+//for(int i = 0; i < 5; i++){
+//    p1[i] = new int[3];
+//}
+//we end up with array of 3 ints from each int pointer
+
+p1[0] p1[1] p1[2] p1[3] p1[4] 
+   |     |     |     |     |
+   v     v     v     v     v
+   0     0     0     0     0
+   0     1     2     3     4
+   0     2     4     6     8
