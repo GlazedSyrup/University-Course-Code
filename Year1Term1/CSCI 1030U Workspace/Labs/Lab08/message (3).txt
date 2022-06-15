@@ -1,0 +1,61 @@
+Insertion Sort:
+The general idea behind insertion sort:
+- Some part of the list (sorted sublist) is always sorted
+- Takes one element at a time, and inserts it into the sorted sublist (in the correct position)
+- When all elements have been added to the sorted sublist, the list has been sorted
+
+INSERT-SORT(A)
+1 for i = 1 to length[A] do:
+2    key = A[i]
+3    j = i
+4
+5    while j > 0 and A[j-1] > key do:
+6        A[j] = A[j-1]
+7        j -= 1
+8    A[j] = key
+
+Example: [ 1 8 6 3 2 10 24 9 ]
+1st Iteration: [ 1 8 6 3 2 10 24 9 ] Dont move 8, 8 > 1
+2nd Iteration: [ 1 6 8 3 2 10 24 9 ] Move 6 to the sorted sublist, 6 < 8, then changing spots until it "fits"
+3rd Iteration: [ 1 3 6 8 2 10 24 9 ] Move 3 to the sorted sublist, 3 < 6, then changing spots until it "fits"
+4th Iteration: [ 1 2 3 6 8 10 24 9 ] Move 2 to the sorted sublist, 2 < 3, then changing spots until it "fits"
+5th Iteration: [ 1 2 3 6 8 10 24 9 ] Dont move 10, 10 > 8
+6th Iteration: [ 1 2 3 6 8 10 24 9 ] Dont move 24, 24 > 10
+7th Iteration: [ 1 2 3 6 8 9 10 24 ] Move 9 to the sorted sublist, 9 < 24 then changing spots until it "fits"
+
+Binary Search:
+The general idea behind binary search:
+- If the list is empty, you are done (not found)
+- Divide the list into three parts:
+    - First half of the list (A)
+    - Middle element (M)
+    - Second half of the list (B)
+    - If searchFor = M, you are done (found)
+    - If searchFor < M, recursively search A
+    - If searchFor > M, recursively search B
+
+BINARY-SEARCH(X, A, start, end)
+1  if start > end then
+2     return False
+3  middle = ((end - start) / 2) + start
+4  if X = A[middle] then
+5     return True
+6  else if X < A[middle] then
+7     return BINARY-SEARCH(X, A, start, middle - 1)
+8  else
+9     return BINARY-SEARCH(X, A, middle + 1, end)
+
+
+Example: [ 1 2 3 4 5 6 7 8 9 ], searching for 6
+                 v       v       v
+1st Iteration: [ 1 2 3 4 5 6 7 8 9 ] middle number is 5, 6 > 5, so take upper block
+                 v v   v
+2nd Iteration: [ 6 7 8 9 ] middle number is 7, 6 < 7, so take lower block
+                 v 
+3rd Iteration: [ 6 ] middle number is 6, 6 = 6, stop
+        
+
+Performance:
+One of the ways to find the performance of your function is counting the number of comparisons (==, <, <=, >, or >=). 
+We can do this by adding a variable called num_comparisons in our function.
+We will then add to this number by the number of comparisons in our function.

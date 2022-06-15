@@ -1,0 +1,25 @@
+import numpy as np
+
+# Sets the seed for the random number generation
+# With this, the generated numbers will be kept the same each run (useful for debugging)
+np.random.seed(1030) 
+
+# Lets generate some numbers to see what they will look like:
+for i in range(100):
+    # Generates numbers from [0,1) on default (includes 0, does not include 1)
+    # In this case we create a bounds of 5-10 by adding 5 to the random val (sets the min bound) and multiplying it by 5 (sets the max bound)
+    random_val = np.random.rand()
+    print(f"random_val = {random_val}")
+    print(f"random_val*5 = {random_val*5}")
+    print(f"5+random_val*5 = {5+random_val*5}")
+    print()
+
+# Next, lets create a "fake" lottery situation, with a 50% chance to win
+chance = 0.5 # 50% chance in winning
+for i in range(10):
+    # Generate a random number (we want to keep the default bounds of 0-1 in this case)
+    random_val = np.random.rand()
+    if (chance > random_val):
+        print(f"{random_val} Won!")
+    else:
+        print(f"{random_val} Lost.")

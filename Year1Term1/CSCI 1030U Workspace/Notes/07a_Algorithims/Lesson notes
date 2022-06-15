@@ -1,0 +1,27 @@
+Outline
+
+Divide and conquer
+    binary search
+greedy algorithims
+    fractional knapsack problem
+dynamic programming
+    Fibonacci
+
+
+Divide and conquer uses the following strategy
+    divide the problem into one or more smaller subproblems
+    recursively solve (conquer) the subproblems
+    combine the solutions to the subproblems
+clearly, a base case is needed
+    generally, there is some size of subproblem that is trivial to solve (without recursion)
+
+Binary search is an example of a divide and conquer algorithm
+
+    if the list is empty, you are done (not found)
+    divide the list into three parts:
+        First half of the list (A)
+        Middle element (M)
+        Second half of the list (B)
+    If searchFor = M, you are done (found)
+    If searchFor < M, recursively search A
+    If searchFor > M, recursively search B

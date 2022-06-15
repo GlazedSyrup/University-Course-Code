@@ -1,0 +1,53 @@
+You can find more information about how Python does I/O in this documentation: https://docs.python.org/3/tutorial/inputoutput.html
+
+CSV:
+This stands for comma separated values. A common method for storing tabulated data.
+CSV files can be found using the '.csv' file extension.
+
+open(filename, mode):
+This function will open a file.
+The first argument is a string which is the path to the file (filename).
+The second argument is the mode, which determines the permissions the file is opened with. The modes are listed here:
+	- 'r'  => Read only 
+	- 'w'  => Write only 
+	- 'a'  => Append 
+	- 'r+' => Read and write
+There are other optional arguments, but will not be useful for our purposes. You are free to look into them at: https://docs.python.org/3/library/functions.html#open
+
+with:
+This is a keyword that is very helpful for File I/O.
+It creates a context for you to interact with the file and closes it after the context finishes.
+If you do not use a with statement you will need to have exception handling (try-finally blocks).
+
+File Objects:
+file.read(size):
+Will return size amount of characters. If not specified returns the entire file.
+
+file.readline():
+Reads a single line from the file. Returns an empty string if at EOF.
+You can also loop over the file object to read lines.
+If you want to read all the lines of a file in a list you can also use list(file) or file.readlines().
+
+file.write(string):
+Write the content of string to the file.
+
+There are other methods of the File object, such as tell(), seek() but they arent needed for this lab.
+
+You can find more information about JSON here: https://docs.python.org/3/library/json.html
+
+JSON:
+JavaScript Object Notation. 
+It is a collection of key/value pairs.
+In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+
+json.dump(path, file):
+Write JSON data to specified file.
+
+json.dumps(path):
+Write JSON data to a formatted string variable.
+
+json.load(path, file):
+Load JSON data from specified file.
+
+json.loads(file):
+Load JSON data into a string.

@@ -1,0 +1,77 @@
+## Example 1 Class
+Check https://docs.python.org/3/tutorial/classes.html for documentation on Python classes.
+
+A class is written using this syntax:
+class <class-name>:
+	<statement 1>
+	.
+	.
+	.
+	<statement N>
+	
+Classes support two important operations: Attribute references, instantiation.
+
+Attribute Reference:
+For example, a Player class could have some attribute called HP. 
+We could then retrieve this attribute by Player.HP.
+
+class Player:
+	HP = None
+
+Instantiation:
+We can instantiate (make an instance or representation) of a class the same way we call a function.
+For example, we could instantiate a variable called krogg by doing krogg = Player().
+However, there is a special method we need to add in a class before we can initialize it.
+This special is method is the __init__() method.
+The init method is analogous to constructor method in C++.
+You give the class arguments in order to instantiate it with certain properties.
+Let's go over a simple example:
+
+class Player:
+	HP = None
+	Name = None
+	
+	def __init__(self, HP, Name):
+		self.HP = HP
+		self.Name = Name
+		
+krogg = Player(100,"Krogg")
+
+You may notice the "self" paramater in the init function.
+Every function in a python class must have a "self" paramater.
+This is because "self" is analogous to "this" in C++, it is the direct reference to the class itself.
+
+The __str__ function:
+Classes come with a bunch of special functions (these functions are the ones with two underscores in the front and back). 
+The __str__ function is one of these, is analogous to the Java's toString() function.
+When you call the print() function on your class, Python will call either Python's standard tostring method or use implemented one.
+
+class Player:
+	HP = None
+	Name = None
+	
+	def __init__(self, HP, Name):
+		self.HP = HP
+		self.Name = Name
+		
+	def __str__(self):
+		return 'Player(HP='+self.HP+', Name='+self.name+')'
+		
+krogg = Player(100,"Krogg")
+print(krogg) ==> "Player(HP=100, Name=Krogg)'
+
+Inheritance:
+Inheritance is a very important part in object oriented programming. 
+It allows to create one interface in which we can use for multiple different types of object.
+Let's say we want to have class system in our RPG, we could extend from a Player class to make different classes.
+For example, we have Krogg who could be in the warrior class.
+
+class Warrior(Player):
+	Attack = None
+	
+	def __init__(self, HP, Name, Attack):
+		self.HP = HP
+		self.Name = Name
+		self.Attack = Attack
+		
+krogg = Warrior(100,"Krogg", 10)
