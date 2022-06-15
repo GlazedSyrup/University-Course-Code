@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"Notes/W9",
+			"Notes/W5 - Recursion",
+			"Notes/W4 - Algorithm Analysis",
+			"Notes/W3 - Linked List",
+			"Notes/W3 - Arrays",
+			"Notes/W1 - Java Tutorials 1/firstPack",
+			"Notes/W1 - Java Tutorials 1",
+			"Labs/Lab06",
+			"Labs/Lab05",
+			"Labs/Lab04",
+			"Labs/Lab03",
+			"Labs/Lab02",
+			"Labs/Lab01",
+			"Assignments/Assignment02",
+			"Assignments/Assignment01/part3",
+			"Assignments/Assignment01/part1",
+			"Assignments/Assignment01",
+			"Labs/Lab09"
+		]
+	}
+}
