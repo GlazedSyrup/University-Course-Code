@@ -1,0 +1,12 @@
+Q. Exceptions are only used at runtime. (Yes)
+
+Q. The catch-all block syntax is `catch(...) {}`
+
+Q. Check out function `unexpected()`.  This is the function that is 
+called when an exception is not handled.
+
+# Rethrowing an exception
+- It is legal to throw an exception in the catch-block. In practice it is done very rarely.
+- This behavior throws to a catch-block within the same chain.
+- Use rethrow; to throw the same exception up
+- Use throw SomeNewException; to throw a different exception to the subsequent catch-blocks
